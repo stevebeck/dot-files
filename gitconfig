@@ -3,7 +3,7 @@
   email = me@bjeanes.com
 [merge]
   summary = true
-  tool = opendiff
+	tool = opendiff
 [alias]
   co = checkout
   put = push origin HEAD
@@ -16,7 +16,8 @@
   status = auto
   ui = auto
 [github]
-  user = bjeanes
+	user = bjeanes
+	token = df574517df9e5cef449ff0010fdce8b6
 [core]
   editor = mate -w
   excludesfile = ~/.gitignore
