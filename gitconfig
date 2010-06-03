@@ -8,6 +8,7 @@
   co = checkout
   put = push origin HEAD
   push-all = "!for i in $(git config --list | grep -E ^remote\\..+\\.url | sed -E 's/^remote\\.(.*)\\.url=.*/\\1/'); do git push $i master; done"
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
 [apply]
   whitespace = nowarn
 [color]
@@ -23,3 +24,5 @@
   excludesfile = ~/.gitignore
 	whitespace = fix
 
+[help]
+	autocorrect = 1
