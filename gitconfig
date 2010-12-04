@@ -23,6 +23,5 @@
   editor = mate -w
   excludesfile = ~/.gitignore
 	whitespace = fix
-
 [help]
 	autocorrect = 1
