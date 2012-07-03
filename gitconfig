@@ -1,6 +1,6 @@
 [user]
-  name = Ryan Bigg
-  email = radarlistener@gmail.com
+	name = Steve Beck
+	email = beck.steve@abc.net.au
 [merge]
   summary = true
 	tool = opendiff
@@ -17,10 +17,10 @@
   status = auto
   ui = auto
 [github]
-	user = radar
-	token = ba7bf2d7f0edc07373873dda887b18ae
+	user = stevebeckabc
+	token = d5989129aa3188399dd67d697f91dbb9
 [core]
-  editor = mate -w
+  editor = sublime -w
   excludesfile = ~/.gitignore
 	whitespace = fix
 [help]

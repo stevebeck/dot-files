@@ -1,7 +1,11 @@
-export PATH="/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/:$PATH"
-export PATH="/Library/PostgreSQL8/bin/:$PATH"     
-export PATH="/usr/local/mysql/bin:$PATH"
-export PATH="/usr/local/pgsql/bin:$PATH"
+# export PATH="/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/:$PATH"
+# export PATH="/Library/PostgreSQL8/bin/:$PATH"     
+# export PATH="/usr/local/mysql/bin:$PATH"
+# export PATH="/usr/local/pgsql/bin:$PATH"
+# export PATH=$PATH:"/usr/local/mongodb/bin"
+# export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# export IRBRC="$HOME/.irbrc"
+export PATH="/usr/local/bin:$PATH"
 export PATH=$PATH:"/usr/local/mongodb/bin"
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export IRBRC="$HOME/.irbrc"
@@ -39,8 +43,7 @@ export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*} ${PWD}"; echo -n
 # fucking useful shit
 alias 2.3="mate ~/Sites/rails-2.3"
 alias mate='/usr/bin/mate'
-alias mvim='open -a /Applications/MacVim.app' 
-alias gpbm='git push banana master'
+# alias subl='open -a /Applications/Sublime\ Text\ 2.app'
 alias ls='ls -G'
 alias ll='ls -lah'
 alias ..='cd ..;' # can then do .. .. .. to move up multiple directories.
@@ -49,6 +52,8 @@ alias g='grep -i'  #case insensitive grep
 alias ducks='du -cks * | sort -rn|head -11' # Lists the size of all the folders$
 alias top='top -o cpu'
 alias systail='tail -f /var/log/system.log'
+
+
 # useful command to find what you should be aliasing:
 alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' | sort | uniq -c | sort -n | tail -n 20 | sort -nr"
 
@@ -89,19 +94,28 @@ alias be="bundle exec"
 
 alias 1.8.7="rvm use 1.8.7"
 alias 1.9.2="rvm use 1.9.2"
+alias 1.9.3="rvm use 1.9.3"
 
 alias rms='rake merge:staging'
 alias start_mongo="screen -dmS mongo rake mongo:start"
 
-alias ambler="ssh getsalesonrails.com"
-alias dj="ssh docjockeyapp.com"
+alias eysdeploy='echo '\''Deploying to staging. Ctrl-C to cancel, or any other key to continue...'\'' && read && ey deploy -e abcshop_staging'
 
-alias pharmmd="cd ~/Sites/mocra/pharmmd"
+alias mt="ssh root@abcshop.co"
+
+alias abcshop="cd ~/Sites/abcshop"
+alias psw="cd ~/Sites/psw.com.au/drupal"
+alias abccommercial="cd ~/Sites/abccommercial.com/sites"
+alias og="cd ~/Sites/organicgardener.com.au/sites"
+alias abcmusic="cd ~/Sites/abcmusic.com.au/sites"
+alias abcdvd="cd ~/Sites/abcdvd.com.au/sites"
+
 alias startpg='sudo /Library/StartupItems/PostgreSQL/PostgreSQL start'
 
 alias hidefile='/usr/bin/SetFile -a "V"'
 alias showfile='/usr/bin/SetFile -a "v"'
-alias brains='cd ~/Sites/railscamp/brains/'
+
+export PATH="/usr/local/bin:$PATH"
 
 teleport() {
   killall teleportd || true
@@ -109,18 +123,6 @@ teleport() {
   open ~/activate\ telefrag.app
 }
  
-alias qwerty="cd '/Users/ryanbigg/Library/Application Support/SIMBL/Plugins/Telefrag.bundle/Contents/Resources/' && rm -f Keymap.plist && teleport"
-alias colemak="cd '/Users/ryanbigg/Library/Application Support/SIMBL/Plugins/Telefrag.bundle/Contents/Resources/' && rm -f Keymap.plist && ln -s QWERTY_Colemak.plist Keymap.plist && teleport"
-alias colemap="colemak"
-alias dvorak="cd '/Users/ryanbigg/Library/Application Support/SIMBL/Plugins/Telefrag.bundle/Contents/Resources/' && rm -f Keymap.plist && ln -s QWERTY_Dvorak.plist Keymap.plist && teleport"
-
-soffice() {
-  cd /Applications/OpenOffice.org.app/Contents/program
-  killall soffice || true
-  screen -dm ./soffice -accept="socket,host=localhost,port=2002;urp" -norestore -headless -invisible -nofirststartwizard
-  cd -
-}
-
 # Gem Doc
 export GEMDIR=`gem env gemdir`
 gemdoc() {
@@ -185,3 +187,7 @@ shopt -s histappend
 
 alias h='history|g'
 if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
+
+# MAMP Settings
+PATH=/Applications/MAMP/Library/bin:/Applications/MAMP/bin/php/php5.3.6/bin:/usr/local/bin:$PATH:/opt/local/bin
+
