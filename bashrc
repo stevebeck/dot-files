@@ -34,7 +34,7 @@ export PS1='\W$(__git_ps1 " \[${COLOR_RED}\](%s)\[${COLOR_NC}\]")⤿ '
 export TERM=xterm-color
 export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 export CLICOLOR=1
-export EDITOR='mate -w -l1'
+export EDITOR='sublime -w -l1'
 export GIT_EDITOR=$EDITOR
 export VISUAL=$EDITOR
 # sets title of window to be user@host
