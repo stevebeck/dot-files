@@ -3,7 +3,7 @@
 	email = beck.steve@abc.net.au
 [merge]
   summary = true
-	tool = opendiff
+  tool = opendiff
 [alias]
   co = checkout
   put = push origin HEAD
@@ -21,7 +21,15 @@
 	token = d5989129aa3188399dd67d697f91dbb9
 [core]
   editor = sublime -w
-  excludesfile = ~/.gitignore
+	excludesfile = /Users/becks3w/.gitignore
 	whitespace = fix
 [help]
 	autocorrect = 1
+[push]
+	default = matching
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

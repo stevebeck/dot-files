@@ -8,4 +8,4 @@ pkg/*
 *.move1v3
 *~
 log/*
-tmp/**/*
+tmp/**/*.DS_Store

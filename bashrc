@@ -103,12 +103,23 @@ alias eysdeploy='echo '\''Deploying to staging. Ctrl-C to cancel, or any other k
 
 alias mt="ssh root@abcshop.co"
 
+alias mt2="ssh root@216.70.112.251"
+
+
+
+alias eyog="ssh deploy@ec2-54-252-169-112.ap-southeast-2.compute.amazonaws.com"
+alias eyhbaw="ssh deploy@ec2-54-252-158-225.ap-southeast-2.compute.amazonaws.com"
+
 alias abcshop="cd ~/Sites/abcshop"
-alias psw="cd ~/Sites/psw.com.au/drupal"
-alias abccommercial="cd ~/Sites/abccommercial.com/sites"
-alias og="cd ~/Sites/organicgardener.com.au/sites"
-alias abcmusic="cd ~/Sites/abcmusic.com.au/sites"
-alias abcdvd="cd ~/Sites/abcdvd.com.au/sites"
+alias am="cd ~/Sites/activememory"
+alias hbaw="cd ~/Sites/drupal/happy-body"
+alias shophelp="cd ~/Sites/abcshop-help"
+alias contentsales="cd ~/Sites/drupal/contentsales/sites"
+alias abccommercial="cd ~/Sites/drupal/abccommercial/sites"
+alias og="cd ~/Sites/drupal/og_d7/public"
+alias abcmusic="cd ~/Sites/drupal/abcmusic/sites"
+alias abcdvd="cd ~/Sites/drupal/abcdvd/sites"
+alias librarysales="cd ~/Sites/drupal/librarysales/sites"
 
 alias startpg='sudo /Library/StartupItems/PostgreSQL/PostgreSQL start'
 
@@ -134,28 +145,20 @@ _gemdocomplete() {
 }
 # Side projects
 sp() {
-  if [ -d ~/Sites/side_projects/$1* ]; then 
-    cd ~/Sites/side_projects/$1*; 
+  if [ -d ~/Sites/drupal/$1* ]; then 
+    cd ~/Sites/drupal/$1*; 
   else
     # unset lookup_name
     # lookup_name=echo $(fold -w1 <(echo $1)) | tr ' ' '*'
     # echo $lookup_name
-    # if [ -d ~/Sites/side_projects/$lookup_name ]; then
-    #   cd ~/Sites/side_projects/*$lookup_name*;
+    # if [ -d ~/Sites/drupal/$lookup_name ]; then
+    #   cd ~/Sites/drupal/*$lookup_name*;
     # else
       echo "$1 is not a project."
     # fi
   fi
 }
 
-# Mocra projects
-m() {
-  if [ -d ~/Sites/Mocra/$1* ]; then 
-    cd ~/Sites/Mocra/$1*; 
-  else
-    echo "$1 is not a project."
-  fi
-}
 complete -o default -o nospace -F _gemdocomplete gemdoc
 complete -C ~/.rake-completion.rb -o default rake
 
@@ -189,5 +192,22 @@ alias h='history|g'
 if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
 
 # MAMP Settings
-PATH=/Applications/MAMP/Library/bin:/Applications/MAMP/bin/php/php5.3.6/bin:/usr/local/bin:$PATH:/opt/local/bin
+#PATH=/Applications/MAMP/Library/bin:/Applications/MAMP/bin/php/php5.3.13/bin:/usr/local/bin:$PATH:/opt/local/bin
 
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+export PATH=/Users/becks3w/bin/Sencha/Cmd/3.0.2.288:$PATH
+
+export SENCHA_CMD_3_0_0="/Users/becks3w/Applications/Sencha/Cmd/3.0.2.288"
+
+export PATH=/Applications/SenchaSDKTools-2.0.0-beta3:$PATH
+
+export SENCHA_SDK_TOOLS_2_0_0_BETA3="/Applications/SenchaSDKTools-2.0.0-beta3"
+
+export PATH=/Users/becks3w/Applications/Sencha/Cmd/3.0.2.288:$PATH
+
+export NODE_PATH="/usr/local/lib/node"
+
+export PATH="/usr/local/share/npm/bin:$PATH"
+export NODE_PATH=/usr/local/lib/node:/usr/local/lib/node_modules
